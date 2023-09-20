@@ -1,5 +1,4 @@
 $('#cekrekening').on("click", function () {
-    $("#result-txt").hide();
     const accountNumber = $("#accountNumber").val();
     const accountBank = $("#accountBank").val();
     if (accountBank === null || accountBank === "" || accountBank === "0") {
@@ -42,6 +41,7 @@ $('#cekrekening').on("click", function () {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
             beforeSend: function () {
+                $('#result-txt').fadeOut('fast', 'linear');
                 $("#result").attr("readonly", true);
                 $("#cekrekening")
                     .attr("disabled", "true")
@@ -53,7 +53,7 @@ $('#cekrekening').on("click", function () {
                 $("#cekrekening")
                     .removeAttr("disabled")
                     .html("Cek Nama");
-                $("#result-txt").fadeIn('slow');
+                $("#result-txt").fadeIn('fast', 'linear');
                 $('#result').html(`
                 <i class="fa-regular fa-circle-check"></i> <strong>${response.data.account_name}</strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -65,7 +65,7 @@ $('#cekrekening').on("click", function () {
                 $("#cekrekening")
                     .removeAttr("disabled")
                     .html("Cek Nama");
-                $("#result-txt").fadeIn('slow');
+                $("#result-txt").fadeIn('fast', 'linear');
                 $('#result').html(`
                 <i class="fa-regular fa-circle-xmark"></i> <strong>${response.responseJSON.message}</strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
