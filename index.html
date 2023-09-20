@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CekRek - Cek Nama Rekening Bank/e-Wallet Indonesia</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net/" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css">
+    <style>
+        body {
+            background-color: rgb(218, 218, 218);
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        .container {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="text-center mb-5">Cek Nama Rekening</h2>
+        <div class="form-group mb-0">
+            <label for="accountBank" class="flex">Bank atau e-Wallet:</label>
+            <select class="custom-select" id="accountBank">
+                <option value="0" selected>Pilih Bank</option>
+                <option value="bca">BCA</option>
+                <option value="mandiri">Mandiri</option>
+                <option value="bni">BNI</option>
+                <option value="bri">BRI</option>
+                <option value='bsm'>BSI (Bank Syariah Indonesia)</option>
+                <option value="bca_syr">BCA Syariah</option>
+                <option value="btn">BTN/BTN Syariah</option>
+                <option value="cimb">CIMB Niaga / CIMB Niaga Syariah</option>
+                <option value="dbs">DBS Indonesia</option>
+                <option value="btpn">BTPN / Jenius</option>
+                <option value="artos">Bank Jago</option>
+                <option value="kesejahteraan_ekonomi">Seabank/Bank BKE</option>
+                <option value="danamon">Danamon / Danamon Syariah</option>
+                <option value="muamalat">Muamalat</option>
+                <option value="hana">LINE Bank/KEB Hana</option>
+                <option value="royal">Blu/BCA Digital</option>
+                <option value="nationalnobu">Nobu Bank</option>
+                <option value="0" disabled>--------------------</option>
+                <option value="ovo">OVO</option>
+                <option value="dana">Dana</option>
+                <option value="linkaja">LinkAja</option>
+                <option value="gopay">GoPay</option>
+                <option value="shopeepay">ShopeePay</option>
+            </select>
+        </div>
+        <div id="accbank-msg" class="mb-4"></div>
+        <div class="form-group mb-0">
+            <label for="accountNumber">No. Rekening:</label>
+            <input type="number" class="form-control" id="accountNumber" placeholder="1234567890" minlength="3"
+                required />
+        </div>
+        <div id="accnum-msg" class="mb-4"></div>
+        <div class="form-group mb-3" style="display:none" id="result-txt">
+            <div class="alert alert-success alert-dismissible fade show" id="result" role="alert"></div>
+        </div>
+        <button type="submit" class="btn btn-danger btn-block" id="cekrekening">Cek Nama</button>
+
+        <p class="mt-5 mb-3 text-center">
+            <a class="m-1" href="https://t.me/heirro" target="_blank"><i class="fa-brands fa-telegram"></i> @heirro</a>
+            <strong>-</strong>
+            <a class="m-1" href="https://github.com/cekrekening/cekrekening.github.io" target="_blank"><i class="fa-brands fa-github"></i> Github</a>
+        </p>
+        <p class="text-center"><strong><a class="text-secondary" href="https://github.com/cekrekening/cekrekening.github.io/blob/main/LICENSE" target="_blank"><i class="fa-regular fa-folder-open"></i> MIT License</strong></a></p>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="main.js"></script>
+
+</html>
