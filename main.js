@@ -31,11 +31,11 @@ $('#cekrekening').on("click", function () {
         }, 1500);
     } else {
         $.ajax({
-            url: "https://cekrek.netovas.com/api/account-inquiry",
+            url: "https://netovas.com/api/cekrek/v1/account-inquiry",
             type: "POST",
             data: {
-                accountBank: $("#accountBank").val(),
-                accountNumber: $("#accountNumber").val(),
+                account_bank: $("#accountBank").val(),
+                account_number: $("#accountNumber").val(),
             },
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
@@ -55,7 +55,7 @@ $('#cekrekening').on("click", function () {
                     .html("Cek Nama");
                 $("#result-txt").fadeIn('fast', 'linear');
                 $('#result').html(`
-                <i class="fa-regular fa-circle-check"></i> <strong>${response.data.account_name}</strong>
+                <i class="fa-regular fa-circle-check"></i> <strong>${response.data.account_holder}</strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
