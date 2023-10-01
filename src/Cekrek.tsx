@@ -4,7 +4,7 @@ import "@fontsource/poppins";
 import "@fontsource/poppins/600.css";
 
 export default function Cekrek() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+   
   const [title] = useState(
     "CekRek - Cek Nama Rekening Bank/e-Wallet Indonesia"
   );

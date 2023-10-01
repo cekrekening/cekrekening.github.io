@@ -6,7 +6,7 @@ export default function Footer() {
           <a
             className="link link-hover hover:no-underline hover:cursor-alias hover:text-blue-600 flex mr-5"
             href="https://documenter.getpostman.com/view/17822564/2s9YJaYPNQ"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             <svg
               fill="#ffffff"
@@ -18,11 +18,11 @@ export default function Footer() {
               viewBox="0 0 380 380"
               stroke="#ffffff"
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
                 {" "}
@@ -36,7 +36,7 @@ export default function Footer() {
               </g>
             </svg>
           </a>
-          <a href="https://trakteer.id/heirro/tip?quantity=1" className="hover:cursor-alias mr-5" target="_blank">
+          <a href="https://trakteer.id/heirro/tip?quantity=1" className="hover:cursor-alias mr-5" target="_blank" rel="noreferrer">
             <img
               id="wse-buttons-preview"
               src="donate.webp"
@@ -48,7 +48,7 @@ export default function Footer() {
           <a
             className="link link-hover hover:no-underline hover:cursor-alias hover:text-blue-600 flex"
             href="https://github.com/cekrekening/cekrekening.github.io"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             <svg
               height="35px"
@@ -59,11 +59,11 @@ export default function Footer() {
               viewBox="0 0 291.32 291.32"
               fill="#000000"
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
                 {" "}
@@ -83,7 +83,7 @@ export default function Footer() {
           <div className="flex flex-row gap-5">
             <a
               href="https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2Fcekrekening%2Fcekrekening.github.io"
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
               <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fcekrekening%2Fcekrekening.github.io&label=Visitors&labelColor=%23ff8a65&countColor=%23697689&style=flat-square&labelStyle=upper" />
             </a>
