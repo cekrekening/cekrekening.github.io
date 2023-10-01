@@ -10,7 +10,7 @@ export default {
   // eslint-disable-next-line no-undef
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["light", "lofi"]
+    themes: ["light","dark", "synthwave"]
   }
 };
 

@@ -1,5 +1,4 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./layout/Footer";
 import Cekrek from "./Cekrek";
 
@@ -7,13 +6,9 @@ export default function App() {
   return (
     <>
       <div className="container-flex flex flex-col justify-center h-screen overflow-hidden">
-        <main className="flex-1 overflow-hidden 2xl:px-20 xl:px-20 lg:px-20 md:px-20 px-5 py-20">
+        <main className="flex-1 overflow-hidden 2xl:px-20 xl:px-20 lg:px-20 md:px-20 px-10 py-16">
           <div className="h-screen">
-            <BrowserRouter>
-              <Routes>
-                <Route path="/" element={<Cekrek />}></Route>
-              </Routes>
-            </BrowserRouter>
+          <Cekrek />
           </div>
         </main>
         <Footer />
