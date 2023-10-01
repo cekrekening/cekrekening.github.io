@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Poppins";
+  background-color: rgb(218, 218, 218);
+}
+
+body {
+  margin: 0;
+  place-items: center;
+  min-height: 100vh;
+}
+
+
+h1 {
+  font-size: 1.72em;
+  line-height: 1;
+}
+
+.fade-in-alert { animation: fadeIn 3s; }
