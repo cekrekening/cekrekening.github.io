@@ -4,12 +4,11 @@ import "@fontsource/poppins";
 import "@fontsource/poppins/600.css";
 
 export default function Cekrek() {
-   
   const [title] = useState(
     "CekRek - Cek Nama Rekening Bank/e-Wallet Indonesia"
   );
   const baseUrl = "https://netovas.com/api/cekrek/v1/account-inquiry";
-  const [data, getData] = useState(null);
+  const [data, getData] = useState("");
   const [btnClass, setBtnClass] = useState("btn btn-info");
   const [btnSpinner, setBtnSpinner] = useState("hidden");
   const [formBank, setFormBank] = useState("select select-info");
@@ -37,44 +36,76 @@ export default function Cekrek() {
     setBtnClass("btn btn-info btn-disabled");
     setDataSuccess("alert alert-success mt-5 hidden");
     setDataNotFound("alert alert-warning mt-5 hidden");
-    axios
-      .post(
-        baseUrl,
-        {
-          account_bank: accountBank,
-          account_number: accountNumber,
-        },
-        {
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+    if (
+      accountBank === "" ||
+      accountBank === null ||
+      accountBank === undefined
+    ) {
+      getData("Account Bank is required");
+      setFormBank("select select-error");
+      setFormNumber("input input-bordered input-error");
+      setBtnSpinner("hidden");
+      setDataSuccess("alert alert-success mt-5 hidden");
+      setDataNotFound("alert alert-error mt-5 mb-5 fade-in-alert");
+      setBtnClass("btn btn-info");
+    } else if (
+      accountNumber === "" ||
+      accountNumber === null ||
+      accountNumber === undefined
+    ) {
+      getData("Account Number is required");
+      setFormNumber("input input-bordered input-error");
+      setFormBank("select select-info");
+      setBtnSpinner("hidden");
+      setDataSuccess("alert alert-success mt-5 hidden");
+      setDataNotFound("alert alert-error mt-5 mb-5 fade-in-alert");
+      setBtnClass("btn btn-info");
+    } else {
+      axios
+        .post(
+          baseUrl,
+          {
+            account_bank: accountBank,
+            account_number: accountNumber,
           },
-        }
-      )
-      .then((response) => {
-        getData(response.data.data.account_holder);
-        setBtnSpinner("hidden");
-        setDataSuccess("alert alert-success mt-5 mb-5 fade-in-alert");
-        setDataNotFound("alert alert-warning mt-5 hidden");
-        setBtnClass("btn btn-info");
-      })
-      .catch((error) => {
-        const message = error.response.data.message;
-        if (message === "Params 'account_bank' is required") {
-          setFormBank("select select-warning");
-          setFormNumber("input input-bordered input-info");
-        } else if (message === "Params 'account_number' is required") {
-          setFormNumber("input input-bordered input-warning");
-          setFormBank("select select-info");
-        } else {
+          {
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+          }
+        )
+        .then((response) => {
           setFormBank("select select-info");
           setFormNumber("input input-bordered input-info");
-        }
-        getData(error.response.data.message);
-        setBtnSpinner("hidden");
-        setDataSuccess("alert alert-success mt-5 hidden");
-        setDataNotFound("alert alert-warning mt-5 mb-5 fade-in-alert");
-        setBtnClass("btn btn-info");
-      });
+          getData(response.data.data.account_holder);
+          setBtnSpinner("hidden");
+          setDataSuccess("alert alert-success mt-5 mb-5 fade-in-alert");
+          setDataNotFound("alert alert-warning mt-5 hidden");
+          setDataNotFound("alert alert-error mt-5 hidden");
+          setBtnClass("btn btn-info");
+        })
+        .catch((error) => {
+          const message = error.response.data.message;
+          if (message === "Params 'account_bank' is required") {
+            setFormBank("select select-warning");
+            setFormNumber("input input-bordered input-info");
+          } else if (message === "Params 'account_number' is required") {
+            setFormNumber("input input-bordered input-warning");
+            setFormBank("select select-info");
+          } else {
+            setFormBank("select select-info");
+            setFormNumber("input input-bordered input-info");
+          }
+          setFormBank("select select-info");
+          setFormNumber("input input-bordered input-info");
+          getData(error.response.data.message);
+          setBtnSpinner("hidden");
+          setDataNotFound("alert alert-error mt-5 hidden");
+          setDataSuccess("alert alert-success mt-5 hidden");
+          setDataNotFound("alert alert-warning mt-5 mb-5 fade-in-alert");
+          setBtnClass("btn btn-info");
+        });
+    }
   }
   return (
     <>
@@ -105,14 +136,22 @@ export default function Cekrek() {
           <option value="btn">BTN / BTN Syariah</option>
           <option value="cimb">CIMB Niaga / CIMB Niaga Syariah</option>
           <option value="dbs">DBS Indonesia</option>
-          <option value="btpn">BTPN / Jenius</option>
+          <option value="btpn">BTPN / Jenius / BPTN Wow!</option>
           <option value="artos">Bank Jago</option>
           <option value="kesejahteraan_ekonomi">Seabank/Bank BKE</option>
           <option value="danamon">Danamon / Danamon Syariah</option>
           <option value="muamalat">Muamalat</option>
           <option value="hana">LINE Bank / KEB Hana</option>
-          <option value="royal">Blu (BCA Digital)</option>
-          <option value="nationalnobu">Nobu Bank</option>
+          <option value="royal">blu by BCA Digital</option>
+          <option value="nationalnobu">Nobu (Nationalnobu) Bank</option>
+          <option value="permata">Bank Permata</option>
+          <option value="mega">Bank Mega</option>
+          <option value="bii">Maybank</option>
+          <option value="panin">Panin Bank</option>
+          <option value="uob">TMRW / UOB Indonesia</option>
+          <option value="hsbc">HSBC Indonesia</option>
+          <option value="citibank">Citibank Indonesia</option>
+          <option value="commonwealth">Commonwealth Bank</option>
           <option disabled>
             {"-- "} e-Wallet {" --"}
           </option>
