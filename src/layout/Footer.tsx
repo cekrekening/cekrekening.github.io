@@ -80,17 +80,6 @@ export default function Footer() {
         </nav>
         <aside>
           <p>Made with ❤️ in Kediri</p>
-          <div className="flex flex-row gap-5">
-            <a
-              href="https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2Fcekrekening%2Fcekrekening.github.io"
-              target="_blank" rel="noreferrer"
-            >
-              <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fcekrekening%2Fcekrekening.github.io&label=Visitors&labelColor=%23ff8a65&countColor=%23697689&style=flat-square&labelStyle=upper" />
-            </a>
-            <a href="https://visitorbadge.io/status?path=https%3A%2F%2Fnetovas.com%2Fapi%2Fcekrek%2Fv1%2Faccount-inquiry">
-              <img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fnetovas.com%2Fapi%2Fcekrek%2Fv1%2Faccount-inquiry&label=API%20Hit&labelColor=%23dce775&countColor=%23697689&style=flat-square&labelStyle=upper" />
-            </a>
-          </div>
         </aside>
       </footer>
     </>
