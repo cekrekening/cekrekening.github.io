@@ -1,27 +1,23 @@
-# React + TypeScript + Vite
+## Cek Nama Rekening
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+#### DISCLAIMER
+Cek Nama Rekening bersifat gratis, API dapat digunakan oleh siapapun dan dimanapun tanpa dipungut biaya apapun. Beberapa bank/e-wallet mungkin tidak dapat digunakan karena beberapa alasan. Kami tidak bertanggung jawab atas kerugian yang ditimbulkan oleh penggunaan software ini.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+### Deskripsi
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Sebuah software simple untuk Cek Nama Rekening kamu atau orang lain, dengan memasukan nomor rekening kamu akan mendapatkan nama pemilik rekening tersebut.
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+### Fitur
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- [x] Cek Nama Rekening
+- [x] Hampir semua bank/e-wallet di Indonesia termasuk bank daerah didukung (BCA, BNI, BRI, BTN, CIMB, Danamon, GoPay, Jenius, LinkAja, Mandiri, OVO, ShopeePay)
+- [x] API dokumentasi bisa dilihat di [https://documenter.getpostman.com/view/17822564/2s9YJaYPNQ]('https://documenter.getpostman.com/view/17822564/2s9YJaYPNQ')
+- [x] Web version bisa dilihat di [https://cekrekening.github.io/]('https://cekrekening.github.io/')
+
+### Developer
+
+- Vava Heirro
