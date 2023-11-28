@@ -113,10 +113,10 @@ export default function Cekrek() {
   return (
     <>
       <h1 className="mb-1 font-semibold bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent">
-        Account Holder Checker
+        Cek Nama Rekening
       </h1>
       <small className="mb-10 text-red-500">
-        **Only Indonesian Bank Account
+        **Hanya untuk Bank/e-Wallet Indonesia
       </small>
       <div className="form-control mt-10 mb-5">
         <label className="label">
@@ -174,6 +174,7 @@ export default function Cekrek() {
           placeholder="0123456789"
           className={formNumber}
           id="account_number"
+          autoComplete="off"
         />
       </div>
       <div className={dataSuccess} id="account_found">
