@@ -10,7 +10,7 @@ export default function Cekrek() {
   const [title] = useState(
     "CekRek - Cek Nama Rekening Bank/e-Wallet Indonesia"
   );
-  const baseUrl = "https://netovas.com/api/cekrek/v1/account-inquiry";
+  const baseUrl = "https://cekrek.heirro.dev/api/cekrek/v1/account-inquiry";
   const [data, getData] = useState("");
   const [btnClass, setBtnClass] = useState("btn btn-info");
   const [btnSpinner, setBtnSpinner] = useState("hidden");
@@ -87,27 +87,38 @@ export default function Cekrek() {
           setDataNotFound("alert alert-error mt-5 hidden");
           setBtnClass("btn btn-info");
         })
-        .catch((error) => {
-          const message = error.response.data.message;
-          if (message === "Params 'account_bank' is required") {
-            setFormBank("select select-warning");
-            setFormNumber("input input-bordered input-info");
-          } else if (message === "Params 'account_number' is required") {
-            setFormNumber("input input-bordered input-warning");
-            setFormBank("select select-info");
-          } else {
-            setFormBank("select select-info");
-            setFormNumber("input input-bordered input-info");
-          }
-          setFormBank("select select-info");
-          setFormNumber("input input-bordered input-info");
-          getData(error.response.data.message);
-          setBtnSpinner("hidden");
-          setDataNotFound("alert alert-error mt-5 hidden");
-          setDataSuccess("alert alert-success mt-5 hidden");
-          setDataNotFound("alert alert-warning mt-5 mb-5 fade-in-alert");
-          setBtnClass("btn btn-info");
-        });
+          .catch((error) => {
+            // Jika error memiliki response, artinya server memberikan response error
+            if (error.response) {
+              const message = error.response.data.message;
+
+              if (message === "Params 'account_bank' is required") {
+                setFormBank("select select-warning");
+                setFormNumber("input input-bordered input-info");
+              } else if (message === "Params 'account_number' is required") {
+                setFormNumber("input input-bordered input-warning");
+                setFormBank("select select-info");
+              } else {
+                setFormBank("select select-info");
+                setFormNumber("input input-bordered input-info");
+              }
+
+              getData(message);
+            } else if (error.request) {
+              getData("Sorry, unable to reach the server or try again later.");
+              setFormBank("select select-error");
+              setFormNumber("input input-bordered input-error");
+            } else {
+              getData("An unexpected error occurred. Please try again later.");
+            }
+
+            // Reset state tombol dan form setelah error
+            setBtnSpinner("hidden");
+            setBtnClass("btn btn-info");
+            setDataSuccess("alert alert-success mt-5 hidden");
+            setDataNotFound("alert alert-warning mt-5 mb-5 fade-in-alert");
+          });
+
     }
   }
   return (
