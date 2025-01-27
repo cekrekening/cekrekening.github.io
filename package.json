@@ -1,8 +1,46 @@
 {
   "name": "cekrekening.github.io",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "private": false,
+  "description": "API Cek Rekening, API Cek Nama Rekening, Cek Nama Rekening Indonesia",
+  "keywords": [
+    "free",
+    "api",
+    "cek",
+    "rekening",
+    "api",
+    "cek",
+    "rekening",
+    "cekrek",
+    "api",
+    "cek",
+    "rekening",
+    "api",
+    "api",
+    "cek",
+    "rekening",
+    "gratis",
+    "cek",
+    "nama",
+    "rekening",
+    "api",
+    "cek",
+    "nama",
+    "rekening",
+    "gratis"
+  ],
+  "homepage": "https://github.com/cekrekening/cekrekening.github.io#readme",
+  "bugs": {
+    "url": "https://github.com/cekrekening/cekrekening.github.io/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cekrekening/cekrekening.github.io.git"
+  },
+  "license": "MIT",
+  "author": "Vava Heirro",
   "type": "module",
+  "main": "vite.config.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build --minify",
