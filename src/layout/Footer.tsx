@@ -1,8 +1,8 @@
 export default function Footer() {
   return (
     <>
-      <footer className="footer footer-center px-10 py-2 bg-base">
-        <nav className="grid grid-flow-col gap-5">
+      <footer className="footer footer-center px-10 py-1 bg-base">
+        <nav className="grid grid-flow-col gap-2">
           <a
             className="link link-hover hover:no-underline hover:cursor-alias hover:text-blue-600 flex mr-5"
             href="https://documenter.getpostman.com/view/31839079/2sAYQgi8yL"
@@ -36,15 +36,16 @@ export default function Footer() {
               </g>
             </svg>
           </a>
-          <a href="https://trakteer.id/heirro/tip?quantity=1" className="hover:cursor-alias mr-5" target="_blank" rel="noreferrer">
-            <img
-              id="wse-buttons-preview"
-              src="donate.webp"
-              height="30"
-              style={{ height: 30 }}
-              alt="Trakteer Saya"
-            />
-          </a>
+
+          {/*<a href="https://trakteer.id/heirro/tip?quantity=1" className="hover:cursor-alias mr-5" target="_blank" rel="noreferrer">*/}
+          {/*  <img*/}
+          {/*    id="wse-buttons-preview"*/}
+          {/*    src="donate.webp"*/}
+          {/*    height="30"*/}
+          {/*    style={{ height: 30 }}*/}
+          {/*    alt="Trakteer Saya"*/}
+          {/*  />*/}
+          {/*</a>*/}
           <a
             className="link link-hover hover:no-underline hover:cursor-alias hover:text-blue-600 flex"
             href="https://github.com/cekrekening/cekrekening.github.io"
@@ -79,8 +80,9 @@ export default function Footer() {
           </a>
         </nav>
         <aside>
-          <p>Made with ❤️ in Kediri</p>
+          {""}
         </aside>
+        <aside></aside>
       </footer>
     </>
   );
