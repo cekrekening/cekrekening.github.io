@@ -5,7 +5,7 @@ export default function Footer() {
         <nav className="grid grid-flow-col gap-5">
           <a
             className="link link-hover hover:no-underline hover:cursor-alias hover:text-blue-600 flex mr-5"
-            href="https://documenter.getpostman.com/view/17822564/2s9YJaYPNQ"
+            href="https://documenter.getpostman.com/view/31839079/2sAYQgi8yL"
             target="_blank" rel="noreferrer"
           >
             <svg
