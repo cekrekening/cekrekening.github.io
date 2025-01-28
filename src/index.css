@@ -13,10 +13,11 @@ body {
   min-height: 100vh;
 }
 
-
 h1 {
   font-size: 1.72em;
   line-height: 1;
 }
 
-.fade-in-alert { animation: fadeIn 3s; }
+.fade-in-alert {
+  animation: fadeIn 3s;
+}

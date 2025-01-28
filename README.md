@@ -1,7 +1,7 @@
 ## Cek Nama Rekening
 
-
 #### DISCLAIMER
+
 Cek Nama Rekening bersifat gratis, API dapat digunakan oleh siapapun dan dimanapun tanpa dipungut biaya apapun. Beberapa bank/e-wallet mungkin tidak dapat digunakan karena beberapa alasan. Kami tidak bertanggung jawab atas kerugian yang ditimbulkan oleh penggunaan software ini.
 
 ---
@@ -9,7 +9,6 @@ Cek Nama Rekening bersifat gratis, API dapat digunakan oleh siapapun dan dimanap
 ### Deskripsi
 
 Sebuah software simple untuk Cek Nama Rekening kamu atau orang lain, dengan memasukan nomor rekening kamu akan mendapatkan nama pemilik rekening tersebut.
-
 
 ### Fitur
 

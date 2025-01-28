@@ -9,7 +9,7 @@ export default function ErrorPage() {
       <div className="sm:container flex flex-col justify-center sm:mx-auto px-20 h-screen">
         <div id="error-page">
           <h1 className="font-semibold">Oops!</h1>
-          <br/>
+          <br />
           <p>Sorry, an unexpected error has occurred.</p>
         </div>
       </div>
