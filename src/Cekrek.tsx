@@ -108,7 +108,7 @@ export default function Cekrek() {
           if (error.message.includes("required")) {
             getData(error.message);
           } else {
-            getData("Sorry, unable to reach the server or try again later.");
+            getData("ACCOUNT NOT FOUND");
             setFormBank("select select-error");
             setFormNumber("input input-bordered input-error");
           }
