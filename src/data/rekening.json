@@ -14,7 +14,11 @@
     { "value": "bukopin_syr", "label": "Bank Bukopin Syariah" },
     { "value": "bumi_arta", "label": "Bank Bumi Arta" },
     { "value": "capital", "label": "Bank Capital Indonesia" },
+<<<<<<< HEAD
     { "value": "bca", "label": "BCA (Bank Central Asia)" },
+=======
+    { "value": "bca", "label": "Bank Central Asia" },
+>>>>>>> 58663ae0df157e24f48db67e2a33dcffc27e3e4b
     { "value": "ccb", "label": "Bank China Construction Bank Indonesia" },
     { "value": "cnb", "label": "Bank CNB (Centratama Nasional Bank)" },
     { "value": "danamon", "label": "Bank Danamon & Danamon Syariah" },

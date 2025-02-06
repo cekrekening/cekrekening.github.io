@@ -172,7 +172,7 @@ export default function Cekrek() {
           onFocus={() => setIsDropdownOpen(true)}
         />
         {isDropdownOpen && (
-          <div className="absolute top-full left-0 right-0 mt-1 bg-base-100 rounded-lg shadow-lg border border-base-500 max-h-96 overflow-y-auto z-50">
+          <div className="absolute top-full left-0 right-0 mt-1 bg-base-100 rounded-lg shadow-lg border border-base-300 max-h-96 overflow-y-auto z-50">
             {filteredOptions.map((group) => (
               <div key={group.type}>
                 {group.options.length > 0 && (
