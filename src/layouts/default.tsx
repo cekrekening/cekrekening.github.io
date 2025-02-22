@@ -16,7 +16,9 @@ export default function DefaultLayout({
         </main>
       </div>
       <footer className="w-full flex items-center justify-center py-2 gap-1 text-sm">
-        <span className="text-default-600">&copy; 2024-{new Date().getFullYear()}</span>
+        <span className="text-default-600">
+          &copy; 2024-{new Date().getFullYear()}
+        </span>
         <p className="text-primary">CekRekening.</p> -
         <p className={"text-default-600 font-mono code"}>v2.0</p>
       </footer>

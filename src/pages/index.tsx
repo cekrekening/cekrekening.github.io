@@ -17,15 +17,12 @@ export default function IndexPage() {
   const baseAPIurl =
     "https://cekrekening-api.belibayar.online/api/v1/account-inquiry";
 
-  const [bankName, setBankName] = React.useState<string | null>(null);
+  const [bankName, setBankName] = React.useState<any>("");
   const [isVisible, setIsVisible] = React.useState(false);
   const [accountHolder, setAccountHolder] = React.useState<string | null>("");
   const [btnLoading, setBtnLoading] = React.useState(false);
-  const [accountHolderFound, setAccountHolderFound] = React.useState<
-    string | null
-  >("");
-
-  const onSelectionBank = (key: string | null) => {
+  const [accountHolderFound, setAccountHolderFound] = React.useState<any>("");
+  const onSelectionBank = (key: React.Key | null) => {
     setBankName(key);
   };
 
