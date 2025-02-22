@@ -86,8 +86,8 @@ export default function IndexPage() {
         isDismissable={false}
         isKeyboardDismissDisabled={true}
         placement={"auto"}
-        onOpenChange={onOpenChange}
         size={"lg"}
+        onOpenChange={onOpenChange}
       >
         <ModalContent>
           {(onClose) => (
@@ -97,7 +97,9 @@ export default function IndexPage() {
               </ModalHeader>
               <ModalBody>
                 <p className="text-sm text-default-600 text-justify">
-                  This API for checking bank/e-wallet account holder names in Indonesia, cannot be used on servers/IPs located outside of Indonesia.
+                  This API for checking bank/e-wallet account holder names in
+                  Indonesia, cannot be used on servers/IPs located outside of
+                  Indonesia.
                 </p>
               </ModalBody>
               <ModalFooter>
@@ -124,6 +126,7 @@ export default function IndexPage() {
         >
           <Autocomplete
             isRequired
+            className="max-w-4xl"
             errorMessage="Bank/e-Wallet Name is required"
             label={"Bank/e-Wallet Name"}
             scrollShadowProps={{
@@ -132,17 +135,13 @@ export default function IndexPage() {
             size={"sm"}
             variant="bordered"
             onSelectionChange={onSelectionBank}
-            className="max-w-4xl"
           >
-            <AutocompleteSection
-              title="Bank Name">
+            <AutocompleteSection title="Bank Name">
               {rekeningData.banks.map((bank) => (
                 <AutocompleteItem key={bank.key}>{bank.label}</AutocompleteItem>
               ))}
             </AutocompleteSection>
-            <AutocompleteSection
-              title="e-Wallet Name"
-            >
+            <AutocompleteSection title="e-Wallet Name">
               {rekeningData.ewallets.map((ewallet) => (
                 <AutocompleteItem key={ewallet.key}>
                   {ewallet.label}
@@ -162,14 +161,14 @@ export default function IndexPage() {
             type="number"
             variant="bordered"
           />
-            <Alert
-              className="max-w-4xl"
-              color={accountHolderFound}
-              isVisible={isVisible}
-              title={accountHolder}
-              variant="faded"
-              onClose={() => setIsVisible(false)}
-            />
+          <Alert
+            className="max-w-4xl"
+            color={accountHolderFound}
+            isVisible={isVisible}
+            title={accountHolder}
+            variant="faded"
+            onClose={() => setIsVisible(false)}
+          />
           <Button
             color="secondary"
             isLoading={btnLoading}
