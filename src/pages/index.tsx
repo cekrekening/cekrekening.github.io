@@ -8,6 +8,14 @@ import {
 } from "@heroui/autocomplete";
 import { Alert } from "@heroui/alert";
 import { Form } from "@heroui/form";
+import {
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  useDisclosure,
+} from "@heroui/modal";
 
 import { title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
@@ -25,6 +33,7 @@ export default function IndexPage() {
   const onSelectionBank = (key: React.Key | null) => {
     setBankName(key);
   };
+  const { onOpenChange } = useDisclosure();
 
   const onSubmit = (e: any) => {
     e.preventDefault();
@@ -72,8 +81,36 @@ export default function IndexPage() {
 
   return (
     <DefaultLayout>
+      <Modal
+        defaultOpen={true}
+        isDismissable={false}
+        isKeyboardDismissDisabled={true}
+        placement={"auto"}
+        onOpenChange={onOpenChange}
+        size={"lg"}
+      >
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1">
+                Important Information!
+              </ModalHeader>
+              <ModalBody>
+                <p className="text-sm text-default-600 text-justify">
+                  This API for checking bank/e-wallet account holder names in Indonesia, cannot be used on servers/IPs located outside of Indonesia.
+                </p>
+              </ModalBody>
+              <ModalFooter>
+                <Button color="danger" onPress={onClose}>
+                  Close
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-        <div className="inline-block max-w-lg text-center justify-center">
+        <div className="inline-block max-w-lg text-center justify-center items-center">
           <span className={title()}>Cek Nama Rekening </span>
           <br />
           <span className={title({ color: "violet", size: "sm" })}>
@@ -82,7 +119,7 @@ export default function IndexPage() {
         </div>
 
         <Form
-          className="w-full gap-5 mt-8 justify-center items-center"
+          className="w-full gap-6 mt-8 justify-center items-center"
           onSubmit={onSubmit}
         >
           <Autocomplete
@@ -90,18 +127,22 @@ export default function IndexPage() {
             errorMessage="Bank/e-Wallet Name is required"
             label={"Bank/e-Wallet Name"}
             scrollShadowProps={{
-              isEnabled: false,
+              isEnabled: true,
             }}
             size={"sm"}
             variant="bordered"
             onSelectionChange={onSelectionBank}
+            className="max-w-4xl"
           >
-            <AutocompleteSection showDivider title="Bank Name">
+            <AutocompleteSection
+              title="Bank Name">
               {rekeningData.banks.map((bank) => (
                 <AutocompleteItem key={bank.key}>{bank.label}</AutocompleteItem>
               ))}
             </AutocompleteSection>
-            <AutocompleteSection title="e-Wallet Name">
+            <AutocompleteSection
+              title="e-Wallet Name"
+            >
               {rekeningData.ewallets.map((ewallet) => (
                 <AutocompleteItem key={ewallet.key}>
                   {ewallet.label}
@@ -113,6 +154,7 @@ export default function IndexPage() {
           <Input
             isClearable
             isRequired
+            className="max-w-4xl"
             errorMessage="Account Number is required"
             label="Account Number"
             name="account_number"
@@ -120,15 +162,14 @@ export default function IndexPage() {
             type="number"
             variant="bordered"
           />
-          <div className={"flex flex-col gap-4 mt-3"}>
             <Alert
+              className="max-w-4xl"
               color={accountHolderFound}
               isVisible={isVisible}
               title={accountHolder}
               variant="faded"
               onClose={() => setIsVisible(false)}
             />
-          </div>
           <Button
             color="secondary"
             isLoading={btnLoading}
