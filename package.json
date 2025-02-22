@@ -21,12 +21,10 @@
     "lint": "eslint -c .eslintrc.json ./src/**/**/*.{ts,tsx} --fix",
     "preview": "vite preview"
   },
-
   "engines": {
     "node": "20.18.1"
   },
   "engineStrict": true,
-
   "dependencies": {
     "@heroui/alert": "^2.2.13",
     "@heroui/autocomplete": "^2.3.14",
@@ -37,11 +35,13 @@
     "@heroui/input": "2.4.13",
     "@heroui/kbd": "2.2.10",
     "@heroui/link": "2.2.11",
+    "@heroui/modal": "^2.2.11",
     "@heroui/navbar": "2.2.12",
     "@heroui/snippet": "2.2.14",
     "@heroui/switch": "2.2.12",
     "@heroui/system": "2.4.10",
     "@heroui/theme": "2.4.9",
+    "@heroui/toast": "^2.0.3",
     "@heroui/use-theme": "2.1.5",
     "@react-aria/visually-hidden": "3.8.19",
     "@react-types/shared": "3.27.0",
