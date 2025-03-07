@@ -6,4 +6,14 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   base: '/',
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react'],
+          'react-dom': ['react-dom'],
+        },
+      },
+    },
+  }
 })
