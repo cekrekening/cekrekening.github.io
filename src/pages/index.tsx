@@ -71,11 +71,11 @@ export default function IndexPage() {
           setAccountHolder(data.message);
         }
       })
-      .catch((error) => {
+      .catch(() => {
         setBtnLoading(false);
         setIsVisible(true);
         setAccountHolderFound("danger");
-        setAccountHolder(error.message);
+        setAccountHolder('There is an error, please try again later');
       });
   }
 
