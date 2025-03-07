@@ -75,7 +75,7 @@ export default function IndexPage() {
         setBtnLoading(false);
         setIsVisible(true);
         setAccountHolderFound("danger");
-        setAccountHolder('There is an error, please try again later');
+        setAccountHolder("There is an error, please try again later");
       });
   }
 
