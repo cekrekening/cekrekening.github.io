@@ -5,13 +5,17 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
-  base: '/',
+  base: "/",
   build: {
     rollupOptions: {
       output: {
         manualChunks: {
-          react: ['react'],
-          'react-dom': ['react-dom'],
+          framework: [
+            "react",
+            "react-dom",
+            "react-router-dom",
+            "react-dom/client",
+          ],
         },
       },
     },
